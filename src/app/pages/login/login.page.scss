@@ -1,0 +1,20 @@
+.sign-up{
+    padding: 15px;
+}
+
+ion-button{
+    width: 170px;
+}
+
+@media (min-width: 769px){
+
+    form{
+        width: 500 px;
+        padding: 50px 10px;
+    }
+}
+
+.icon{
+    font-size: 100px;
+    --ion-color:var(--ion-color-primary);
+    };
