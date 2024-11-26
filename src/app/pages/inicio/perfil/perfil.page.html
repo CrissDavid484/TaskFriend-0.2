@@ -2,12 +2,17 @@
   <app-header title="Perfil"></app-header>
   <app-logo></app-logo>
 
-  <div class="content ion-text-center">
-    <ion-icon *ngIf="!user.img" class="avatar" name="person-circle-outline"></ion-icon>
-    <img *ngIf="user.img" [src]="user.img" class="avatar" alt="Foto de perfil">
-    <br>
-    <ion-button (click)="takeImage()" mode="ios" shape="round">
-      Cambia tu foto de perfil
+  <div class="content ion-text-center ion-padding-top">
+
+    <ion-avatar *ngIf="!user.img" class="avatar">
+      <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
+    </ion-avatar>
+    <ion-avatar *ngIf="user.img" class="avatar">
+      <img [src]="user.img" />
+    </ion-avatar>
+
+    <ion-button class="photo-btn" (click)="takeImage()" mode="ios" size="small" shape="round">
+      <ion-icon name="camera-outline"></ion-icon>
     </ion-button>
     <h2>{{user.name}}</h2>
     <div>{{user.email}}</div>
