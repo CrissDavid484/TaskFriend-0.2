@@ -67,9 +67,9 @@ export class RegistroPage implements OnInit {
         })
 
         this.form.reset();
-      }, error => {
+      }, _error => {
         this.utilsSvc.presentToast({
-          message: error,
+          message: 'Error al registrarse, intente con otro correo',
           duration: 5000,
           color: 'warning',
           icon: 'alert-circle-outline'

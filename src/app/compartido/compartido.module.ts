@@ -8,6 +8,7 @@ import { CustomInputComponent } from './componentes/custom-input/custom-input.co
 import { LogoComponent } from './componentes/logo/logo.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AgregarActualizarTaskComponent } from './componentes/agregar-actualizar-task/agregar-actualizar-task.component';
+import { MapaComponent } from './componentes/mapa/mapa.component';
 
 
 @NgModule({
@@ -15,14 +16,16 @@ import { AgregarActualizarTaskComponent } from './componentes/agregar-actualizar
     HeaderComponent,
     CustomInputComponent,
     LogoComponent,
-    AgregarActualizarTaskComponent
+    AgregarActualizarTaskComponent,
+    MapaComponent,
   ],
   exports:[
     HeaderComponent,
     CustomInputComponent,
     LogoComponent,
     NgCircleProgressModule,
-    AgregarActualizarTaskComponent
+    AgregarActualizarTaskComponent,
+    MapaComponent,
   ],
   imports: [
     CommonModule,

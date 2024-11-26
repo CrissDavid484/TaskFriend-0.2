@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-acerca',
@@ -8,9 +7,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class AcercaPage implements OnInit {
 
-  constructor(
-    private utilsSvc: UtilsService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
