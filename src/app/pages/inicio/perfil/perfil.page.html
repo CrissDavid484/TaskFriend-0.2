@@ -1,17 +1,20 @@
 <ion-content>
-<app-header title="Perfil"></app-header>
-<app-logo></app-logo>
+  <app-header title="Perfil"></app-header>
+  <app-logo></app-logo>
 
+  <div class="content ion-text-center">
+    <ion-icon *ngIf="!user.img" class="avatar" name="person-circle-outline"></ion-icon>
+    <img *ngIf="user.img" [src]="user.img" class="avatar" alt="Foto de perfil">
+    <br>
+    <ion-button (click)="takeImage()" mode="ios" shape="round">
+      Cambia tu foto de perfil
+    </ion-button>
+    <h2>{{user.name}}</h2>
+    <div>{{user.email}}</div>
 
-<div class="content ion-text-center">
-
-  <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
-  <h2>{{user.name}}</h2>
-  <div>{{user.email}}</div>
-
-  <ion-button (click)="signOut()" shape="round">
-    Cerrar Sesión
-    <ion-icon slot="end" name="log-out-outline"></ion-icon>
-  </ion-button>
-</div>
+    <ion-button (click)="signOut()" shape="round">
+      Cerrar Sesión
+      <ion-icon slot="end" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-content>

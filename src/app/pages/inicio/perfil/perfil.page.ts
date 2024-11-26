@@ -20,12 +20,16 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
   }
     //==== Tomar/Seleccionar  imagen ===
-    async takeImage(){
-      let user = this.user;
-
-      const dataUrl= (await this.utilsSvc.takePicture('Imagen de perfil')).dataUrl;
-
-      let imagePath = `${user.uid}/perfil`;
+    async takeImage() {
+      try {
+        const photo = await this.utilsSvc.takePicture('Imagen de perfil');
+        if (photo) {
+          this.user.img = photo.dataUrl;
+          this.utilsSvc.setElementInLocalStorage('user', this.user);
+        }
+      } catch (error) {
+        console.log('User cancelled the action');
+      }
     }
 
   ionViewWillEnter() {
