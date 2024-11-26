@@ -26,9 +26,23 @@ export class PerfilPage implements OnInit {
         if (photo) {
           this.user.img = photo.dataUrl;
           this.utilsSvc.setElementInLocalStorage('user', this.user);
+          await this.uploadImageToFirebase(photo.dataUrl);
         }
       } catch (error) {
         console.log('User cancelled the action');
+      }
+    }
+  
+    async uploadImageToFirebase(imageDataUrl: string) {
+      const user: user = this.utilsSvc.getElementFromLocalStorage('user');
+      const path = `users/${user.uid}/iperfil/${user.uid}`;
+      const imageObject = { img: imageDataUrl };
+  
+      try {
+        await this.firebaseSvc.updateDocument(path, imageObject);
+        console.log('Imagen subida exitosamente');
+      } catch (error) {
+        console.error('Error al subir la imagen:', error);
       }
     }
 

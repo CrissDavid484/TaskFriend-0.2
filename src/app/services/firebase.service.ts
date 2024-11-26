@@ -50,12 +50,12 @@ export class FirebaseService {
     return this.db.doc(path).collection(subcollectionName).valueChanges({ idField: 'id' });
   }
 
-  addToSubcollection(path: string, subcollectionName: string, object: any){
-    return this.db.doc(path).collection(subcollectionName).add(object)
+  addToSubcollection(path: string, subcollectionName: string, object: any) {
+    return this.db.doc(path).collection(subcollectionName).add(object);
   }
 
-  updateDocument(path: string, object: any){
-    return this.db.doc(path).update(object)
+  updateDocument(path: string, object: any) {
+    return this.db.doc(path).set(object, { merge: true });
   }
 
   deleteDocument(path: string){
